@@ -49,7 +49,7 @@ import com.gargoylesoftware.htmlunit.util.KeyDataPair;
 import com.gargoylesoftware.htmlunit.util.NameValuePair;
 import com.gargoylesoftware.htmlunit.xml.XmlPage;
 
-@Ignore
+//@Ignore
 public class ApiScolTests {
 	protected static final String LOGIN = "crdp";
 	protected static final String PASSWORD = "foucault";
@@ -70,16 +70,16 @@ public class ApiScolTests {
 		webClient.getOptions().setUseInsecureSSL(true);
 		editionServiceBaseUrl = System.getProperty("edit.ws.url");
 		if (StringUtils.isEmpty(editionServiceBaseUrl))
-			editionServiceBaseUrl = "http://dev-metaeduc.itop.local";
+			editionServiceBaseUrl = "http://apiscol:8080";
 		metaServiceBaseUrl = System.getProperty("meta.ws.url");
 		if (StringUtils.isEmpty(metaServiceBaseUrl))
-			metaServiceBaseUrl = "http://dev-metaeduc.itop.local";
+			metaServiceBaseUrl = "http://apiscol:8080";
 		contentServiceBaseUrl = System.getProperty("content.ws.url");
 		if (StringUtils.isEmpty(contentServiceBaseUrl))
-			contentServiceBaseUrl = "http://dev-metaeduc.itop.local";
+			contentServiceBaseUrl = "http://apiscol:8080";
 		thumbsServiceBaseUrl = System.getProperty("thumbs.ws.url");
 		if (StringUtils.isEmpty(thumbsServiceBaseUrl))
-			thumbsServiceBaseUrl = "http://dev-metaeduc.itop.local";
+			thumbsServiceBaseUrl = "http://apiscol:8080";
 		testDataDirectory = System.getProperty("tests.data.dir");
 		if (StringUtils.isEmpty(testDataDirectory))
 			testDataDirectory = "data/";

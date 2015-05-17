@@ -19,7 +19,6 @@ import com.gargoylesoftware.htmlunit.xml.XmlPage;
 
 import fr.ac_versailles.crdp.apiscol.tests.ApiScolTests;
 
-@Ignore
 public class PreviewGenerationTest extends ApiScolTests {
 	@Before
 	public void initialize() {
@@ -103,10 +102,10 @@ public class PreviewGenerationTest extends ApiScolTests {
 					+ htmlElement.asXml(), htmlElement.getAttribute("src")
 					.endsWith(".png"));
 		}
-		deleteResource(page2);
-		XmlPage newMetadataPage = getMetadata(metadataLinkLocation, false);
-		deleteMetadataEntry(metadataLinkLocation,
-				getAtomUpdatedField(newMetadataPage));
+		//deleteResource(page2);
+//		XmlPage newMetadataPage = getMetadata(metadataLinkLocation, false);
+//		deleteMetadataEntry(metadataLinkLocation,
+//				getAtomUpdatedField(newMetadataPage));
 
 	}
 }

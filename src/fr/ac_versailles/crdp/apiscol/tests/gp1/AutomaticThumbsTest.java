@@ -19,7 +19,6 @@ import com.gargoylesoftware.htmlunit.xml.XmlPage;
 
 import fr.ac_versailles.crdp.apiscol.tests.ApiScolTests;
 
-@Ignore
 public class AutomaticThumbsTest extends ApiScolTests {
 	@Before
 	public void initialize() {
