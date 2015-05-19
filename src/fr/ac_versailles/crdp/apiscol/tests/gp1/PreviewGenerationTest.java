@@ -55,7 +55,7 @@ public class PreviewGenerationTest extends ApiScolTests {
 		XmlPage page2 = postFileDocument(editUri, urn, resourceFileName, eTag);
 		XmlPage page3 = askForResourceRepresentation(metadataLinkLocation);
 		try {
-			Thread.sleep(45000);
+			Thread.sleep(12000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

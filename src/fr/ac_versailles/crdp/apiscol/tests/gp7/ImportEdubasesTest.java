@@ -25,6 +25,7 @@ import org.apache.tika.detect.DefaultDetector;
 import org.apache.tika.parser.AutoDetectParser;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -110,8 +111,8 @@ public class ImportEdubasesTest extends ApiScolTests {
 		while (it.hasNext()) {
 			i++;
 			System.out.println(i + ".");
-			if (i > 30)
-				break;
+//			if (i > 30)
+//				break;
 
 			HtmlElement h3Elem = it.next();
 			// if (i < 3000)
@@ -492,7 +493,11 @@ public class ImportEdubasesTest extends ApiScolTests {
 					string.setTextContent("scolomfr-voc-016");
 					getTaxon(taxonPath).setTextContent(entry);
 					getTaxonId(taxonPath).setTextContent(id);
-					assertTrue(key + "is blank", StringUtils.isNotEmpty(key));
+					if (StringUtils.isEmpty(key)) {
+						System.out.println("Pas de compétence identifiée pour "
+								+ str);
+						continue;
+					}
 					if (domainsTaxons.keySet().contains(key)) {
 						taxonPath.appendChild(domainsTaxons.get(key));
 						System.out.println("copie " + key);
@@ -651,8 +656,13 @@ public class ImportEdubasesTest extends ApiScolTests {
 							}
 
 						}
-						assertTrue(key + "   " + str,
-								StringUtils.isNotBlank(entry));
+						if (StringUtils.isBlank(entry)) {
+							System.out
+									.println("Pas de compétence identifiée pour "
+											+ str);
+							continue;
+						}
+
 						getTaxon(taxonPath).setTextContent(entry);
 						getTaxonId(taxonPath).setTextContent(id);
 						taxonPath.getParentNode().removeChild(taxonPath);
