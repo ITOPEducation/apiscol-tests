@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lom xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ltsc.ieee.org/xsd/LOM">
+  <general>
+    <identifier>
+      <catalog>URI</catalog>
+      <entry>http://hetg.ac-reunion.fr/spip/spip.php?article196</entry>
+    </identifier>
+    <title>
+      <string language="fre">Citoyenneté mardi 23 nov</string>
+    </title>
+    <language>fre</language>
+    <description>
+      <string language="fre">plan du cours et documents ressources à interroger.</string>
+    </description>
+  </general>
+  <lifeCycle>
+    <contribute>
+      <role>
+        <source>LOMv1.0</source>
+        <value>publisher</value>
+      </role>
+      <entity>BEGIN:vCardVERSION:3.0N:ITOPFN:ITOPEND:vCard</entity>
+      <date>
+        <dateTime>2015-11-24</dateTime>
+      </date>
+    </contribute>
+  </lifeCycle>
+  <technical>
+    <location>http://hetg.ac-reunion.fr/spip/spip.php?article196</location>
+  </technical>
+</lom>

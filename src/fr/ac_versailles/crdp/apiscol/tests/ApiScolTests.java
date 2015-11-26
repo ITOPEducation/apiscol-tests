@@ -70,16 +70,16 @@ public class ApiScolTests {
 		webClient.getOptions().setUseInsecureSSL(true);
 		editionServiceBaseUrl = System.getProperty("edit.ws.url");
 		if (StringUtils.isEmpty(editionServiceBaseUrl))
-			editionServiceBaseUrl = "http://apiscol:8080";
+			editionServiceBaseUrl = "http://localhost:8080";
 		metaServiceBaseUrl = System.getProperty("meta.ws.url");
 		if (StringUtils.isEmpty(metaServiceBaseUrl))
-			metaServiceBaseUrl = "http://apiscol:8080";
+			metaServiceBaseUrl = "http://localhost:8080";
 		contentServiceBaseUrl = System.getProperty("content.ws.url");
 		if (StringUtils.isEmpty(contentServiceBaseUrl))
-			contentServiceBaseUrl = "http://apiscol:8080";
+			contentServiceBaseUrl = "http://localhost:8080";
 		thumbsServiceBaseUrl = System.getProperty("thumbs.ws.url");
 		if (StringUtils.isEmpty(thumbsServiceBaseUrl))
-			thumbsServiceBaseUrl = "http://apiscol:8080";
+			thumbsServiceBaseUrl = "http://localhost:8080";
 		testDataDirectory = System.getProperty("tests.data.dir");
 		if (StringUtils.isEmpty(testDataDirectory))
 			testDataDirectory = "data/";
@@ -381,6 +381,11 @@ public class ApiScolTests {
 
 	protected XmlPage postMetadataDocument(String path, URL url,
 			boolean ignoreFailure) {
+		return postMetadataDocument(path, url, ignoreFailure, false);
+	}
+
+	protected XmlPage postMetadataDocument(String path, URL url,
+			boolean ignoreFailure, boolean autodetectContent) {
 		WebRequest request = new WebRequest(url, HttpMethod.POST);
 		request.setAdditionalHeader("Accept", "application/atom+xml");
 		request.setEncodingType(FormEncodingType.MULTIPART);
@@ -389,6 +394,8 @@ public class ApiScolTests {
 		assertTrue("Test file does not exist " + file.getAbsolutePath(),
 				file.exists());
 		params.add(new KeyDataPair("file", file, "application/xml", "utf-8"));
+		if (autodetectContent)
+			params.add(new NameValuePair("url_autodetect", "true"));
 		request.setRequestParameters(params);
 
 		XmlPage page = null;
