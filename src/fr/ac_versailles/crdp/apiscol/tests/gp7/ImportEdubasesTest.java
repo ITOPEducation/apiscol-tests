@@ -111,12 +111,9 @@ public class ImportEdubasesTest extends ApiScolTests {
 		while (it.hasNext()) {
 			i++;
 			System.out.println(i + ".");
-			if (i > 300)
-				break;
 
 			HtmlElement h3Elem = it.next();
-			 if (i < 30)
-			 continue;
+
 			DomNodeList<HtmlElement> a = h3Elem.getElementsByTagName("a");
 			if (a.getLength() == 0)
 				continue;
