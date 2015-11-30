@@ -394,8 +394,10 @@ public class ApiScolTests {
 		assertTrue("Test file does not exist " + file.getAbsolutePath(),
 				file.exists());
 		params.add(new KeyDataPair("file", file, "application/xml", "utf-8"));
-		if (autodetectContent)
+		if (autodetectContent) {
 			params.add(new NameValuePair("url_autodetect", "true"));
+			params.add(new NameValuePair("thumb_autochoice", "true"));
+		}
 		request.setRequestParameters(params);
 
 		XmlPage page = null;
