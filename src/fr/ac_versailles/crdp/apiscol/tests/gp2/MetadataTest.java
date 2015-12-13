@@ -38,19 +38,21 @@ public class MetadataTest extends ApiScolTests {
 		assertTrue("The Url must be valid", url != null);
 
 		XmlPage result1 = postMaintenanceRequest("meta", "optimization");
+
 		testReportDocumentStatusIsDone(result1);
 		testReportDocumentMessageContains(
 				"Search engine index has been optimized", result1);
 		XmlPage result2 = postMaintenanceRequest("meta", "recovery");
-		testReportDocumentStatusIsDone(result2);
-		testReportDocumentMessageContains(
-				"Search engine index has been restored", result2);
+		XmlPage result3 = waitForStatusDone(result2, false, 0);
+		testReportDocumentStatusIsDone(result3);
+		testOneOfReportDocumentMessagesContains("Solr asked for commit",
+				result3);
 		if (overallDeletionAuthorized) {
-			XmlPage result3 = postMaintenanceRequest("meta", "deletion");
-			testReportDocumentStatusIsDone(result3);
+			XmlPage result4 = postMaintenanceRequest("meta", "deletion");
+			testReportDocumentStatusIsDone(result4);
 			testReportDocumentMessageContains(
 					"All resource have been deleted in metadata repository",
-					result3);
+					result4);
 		}
 	}
 
