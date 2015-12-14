@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lom xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ltsc.ieee.org/xsd/LOM">
+  <general>
+    <identifier>
+      <catalog>URI</catalog>
+      <entry>https://www.edumedia-sciences.com/fr/media/743-experience-de-mendel-monohybridisme</entry>
+    </identifier>
+    <title>
+      <string language="fre">poisson rouge</string>
+    </title>
+    <language>fre</language>
+    <description>
+      <string language="fre">plan du cours et documents ressources à interroger.</string>
+    </description>
+  </general>
+  <lifeCycle>
+    <contribute>
+      <role>
+        <source>LOMv1.0</source>
+        <value>publisher</value>
+      </role>
+      <entity>BEGIN:VCARD VERSION:3.0 N:ITOP FN:ITOP END:VCARD</entity>
+      <date>
+        <dateTime>2015-11-24</dateTime>
+      </date>
+    </contribute>
+  </lifeCycle>
+  <technical>
+    <location>https://fr.wikipedia.org/wiki/Poisson_rouge</location>
+    <format>text/html</format>
+  </technical>
+  <educational>
+    <learningResourceType>
+      <source>LOMv1.0</source>
+      <value>lecture</value>
+    </learningResourceType>
+    <intendedEndUserRole>
+      <source>LOMv1.0</source>
+      <value>learner</value>
+    </intendedEndUserRole>
+  </educational>
+</lom>

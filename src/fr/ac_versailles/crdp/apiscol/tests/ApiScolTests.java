@@ -240,6 +240,26 @@ public class ApiScolTests {
 		assertTrue("One one the authors should be " + author, false);
 	}
 
+	protected void testAtomDocumentContributorsContainsOrganization(
+			String role, String organization, XmlPage page) {
+		Element root = getAtomDocumentRootItem(page);
+		NodeList authors = root.getElementsByTagName("contributor");
+		for (int i = 0; i < authors.getLength(); i++) {
+			Element authorElement = (Element) authors.item(0);
+			Element roleElement = (Element) authorElement.getElementsByTagName(
+					"role").item(0);
+			testNodeHasApiscolNameSpace(roleElement);
+			Element orgElement = (Element) authorElement.getElementsByTagName(
+					"organization").item(0);
+			testNodeHasApiscolNameSpace(orgElement);
+			if (roleElement.getTextContent().equals(role)
+					&& orgElement.getTextContent().equals(organization))
+				return;
+		}
+		assertTrue("One one the contributors organization should be "
+				+ organization + " with role " + role, false);
+	}
+
 	protected void testAtomDocumentSummaryContains(String summaryExtract,
 			XmlPage page) {
 		Element root = getAtomDocumentRootItem(page);
@@ -265,6 +285,23 @@ public class ApiScolTests {
 				"There should be only one title and not "
 						+ messages.getLength(), messages.getLength() == 1);
 		String title = ((Element) messages.item(0)).getTextContent();
+		assertTrue("The title should contains " + messageString + " but it is "
+				+ title, title.contains(messageString));
+	}
+
+	/*
+	 * Report document test
+	 */
+	protected void testOneOfReportDocumentMessagesContains(
+			String messageString, XmlPage page) {
+		Element root = getReportDocumentRootItem(page);
+		NodeList messages = root.getElementsByTagName("message");
+		String title = "";
+		for (int i = 0; i < messages.getLength(); i++) {
+			title = ((Element) messages.item(i)).getTextContent();
+			if (title.contains(messageString))
+				break;
+		}
 		assertTrue("The title should contains " + messageString + " but it is "
 				+ title, title.contains(messageString));
 	}
@@ -733,19 +770,21 @@ public class ApiScolTests {
 		return page;
 	}
 
-	private XmlPage waitForStatusDone(XmlPage page, boolean ignoreDefault,
+	protected XmlPage waitForStatusDone(XmlPage page, boolean ignoreDefault,
 			int numberOfTries) {
+		System.out.println("essai numero " + numberOfTries);
 		if (numberOfTries > 200)
 			if (!ignoreDefault)
 				assertTrue(
-						"The number of tries for file transfer report to display done status should not be more than 200, it is"
+						"The number of tries for report to display done status should not be more than 200, it is"
 								+ numberOfTries, false);
 			else
 				return null;
 		String status = getReportDocumentStatus(page);
 		if (status.equals("done"))
 			return page;
-		else if (status.equals("pending") || status.equals("initiated")) {
+		else if (status.equals("pending") || status.equals("initiated")
+				|| status.equals("recovery_running")) {
 			String link = getReportLinkLocation(page, "self",
 					"application/atom+xml");
 			WebRequest request = new WebRequest(getServiceUrl(link, null),

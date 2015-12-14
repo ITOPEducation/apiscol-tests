@@ -4,10 +4,10 @@
 	<general>
 		<identifier>
 			<catalog>URI</catalog>
-			<entry>http://hetg.ac-reunion.fr/spip/spip.php?article196</entry>
+			<entry>https://www.edumedia-sciences.com/fr/media/743-experience-de-mendel-monohybridisme</entry>
 		</identifier>
 		<title>
-			<string language="fre">Citoyenneté mardi 23 nov</string>
+			<string language="fre">monohybridisme</string>
 		</title>
 		<language>fre</language>
 		<description>
@@ -32,7 +32,7 @@
 		</contribute>
 	</lifeCycle>
 	<technical>
-		<location>http://hetg.ac-reunion.fr/spip/spip.php?article196
+		<location>https://www.edumedia-sciences.com/fr/media/743-experience-de-mendel-monohybridisme
 		</location>
 	</technical>
 </lom>
