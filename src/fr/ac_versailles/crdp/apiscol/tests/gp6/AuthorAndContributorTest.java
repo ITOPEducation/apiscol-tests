@@ -27,7 +27,7 @@ public class AuthorAndContributorTest extends ApiScolTests {
 
 	@Test
 	public void testPostingMetadataWithAuthorAndPublisher() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage page = postMetadataDocument("enqstat.xml", url);
 		testAtomDocumentAuthorsContains("Dornbusch, Joachim", page);

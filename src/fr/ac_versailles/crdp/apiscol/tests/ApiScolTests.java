@@ -56,7 +56,8 @@ public class ApiScolTests {
 	protected WebClient webClient;
 	protected String testDataDirectory;
 	protected boolean overallDeletionAuthorized;
-	protected static String editionServiceBaseUrl;
+	protected static String editionServiceBaseLanUrl;
+	protected static String editionServiceBaseWanUrl;
 	protected static String metaServiceBaseUrl;
 	protected static String contentServiceBaseUrl;
 	protected static String thumbsServiceBaseUrl;
@@ -68,9 +69,11 @@ public class ApiScolTests {
 		webClient.getOptions().setJavaScriptEnabled(false);
 		webClient.getOptions().setCssEnabled(false);
 		webClient.getOptions().setUseInsecureSSL(true);
-		editionServiceBaseUrl = System.getProperty("edit.ws.url");
-		if (StringUtils.isEmpty(editionServiceBaseUrl))
-			editionServiceBaseUrl = "http://localhost:8080";
+		editionServiceBaseLanUrl = System.getProperty("edit.ws.url");
+		if (StringUtils.isEmpty(editionServiceBaseLanUrl))
+			editionServiceBaseLanUrl = "http://localhost:8080";
+		if (StringUtils.isEmpty(editionServiceBaseWanUrl))
+			editionServiceBaseWanUrl = "http://apiscol-external:8080";
 		metaServiceBaseUrl = System.getProperty("meta.ws.url");
 		if (StringUtils.isEmpty(metaServiceBaseUrl))
 			metaServiceBaseUrl = "http://localhost:8080";
@@ -112,7 +115,7 @@ public class ApiScolTests {
 
 	protected XmlPage postMaintenanceRequest(String service, String command) {
 		URL url = getServiceUrl("/edit/maintenance/" + service + "/" + command,
-				editionServiceBaseUrl);
+				editionServiceBaseLanUrl);
 		WebRequest request = new WebRequest(url, HttpMethod.POST);
 		request.setAdditionalHeader("Accept", "application/atom+xml");
 		request.setEncodingType(FormEncodingType.URL_ENCODED);
@@ -566,7 +569,7 @@ public class ApiScolTests {
 	}
 
 	protected XmlPage getNewResourcePage(String metadata, String type) {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage page = createNewRessource(metadata, type);
 		return page;
@@ -574,7 +577,7 @@ public class ApiScolTests {
 
 	private XmlPage createNewRessource(String metadata, String type) {
 		WebRequest request = new WebRequest(getServiceUrl("/edit/resource",
-				editionServiceBaseUrl), HttpMethod.POST);
+				editionServiceBaseLanUrl), HttpMethod.POST);
 		request.setAdditionalHeader("Accept", "application/atom+xml");
 		request.setEncodingType(FormEncodingType.URL_ENCODED);
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -862,8 +865,8 @@ public class ApiScolTests {
 				"application/atom+xml");
 		assertTrue("The edit media URI " + editUri
 				+ "should be in the domain of edition service : "
-				+ editionServiceBaseUrl,
-				editUri.startsWith(editionServiceBaseUrl));
+				+ editionServiceBaseWanUrl,
+				editUri.startsWith(editionServiceBaseWanUrl));
 		return editUri;
 	}
 
@@ -1188,14 +1191,14 @@ public class ApiScolTests {
 				"application/atom+xml");
 		assertTrue("The edit  URI " + editUri
 				+ "should be in the domain of edition service : "
-				+ editionServiceBaseUrl,
-				editUri.startsWith(editionServiceBaseUrl));
+				+ editionServiceBaseWanUrl,
+				editUri.startsWith(editionServiceBaseWanUrl));
 		return editUri;
 	}
 
 	protected XmlPage deleteMetadataEntry(String uri, String updated) {
 		WebRequest request = new WebRequest(getServiceUrl("/edit/meta",
-				editionServiceBaseUrl), HttpMethod.DELETE);
+				editionServiceBaseLanUrl), HttpMethod.DELETE);
 		List<NameValuePair> list = new ArrayList<NameValuePair>();
 		list.add(new NameValuePair("mdid", uri));
 		request.setRequestParameters(list);
@@ -1220,7 +1223,7 @@ public class ApiScolTests {
 	}
 
 	public XmlPage postingImsLdFile1(File tempDir, boolean automatedThumbs) {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 
 		Document manifest = loadManifest(tempDir);
@@ -1229,7 +1232,7 @@ public class ApiScolTests {
 		extractPlayMetadata(manifest, tempDir, url);
 		File syntheticManifest = dumpXMLToFile(tempDir, manifest);
 		System.out.println("manifest synthetic=" + syntheticManifest);
-		URL url2 = getServiceUrl("/edit/manifest", editionServiceBaseUrl);
+		URL url2 = getServiceUrl("/edit/manifest", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage packResponse = postImsLdDocument(syntheticManifest, url2);
 		// System.out.println(packResponse.asXml());

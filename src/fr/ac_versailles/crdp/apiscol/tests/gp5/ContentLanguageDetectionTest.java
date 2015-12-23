@@ -27,7 +27,7 @@ public class ContentLanguageDetectionTest extends ApiScolTests {
 
 	@Test
 	public void testPostingGreekDocumentAndCheckMetadata() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage page = postMetadataDocument("cuisson1.xml", url);
 		String metadataLinkLocation = getAtomLinkLocation(page, "self",

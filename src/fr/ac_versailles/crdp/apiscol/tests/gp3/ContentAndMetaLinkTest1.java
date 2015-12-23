@@ -26,7 +26,7 @@ public class ContentAndMetaLinkTest1 extends ApiScolTests {
 
 	@Test
 	public void testPostingLinkWithMetadata() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage page = postMetadataDocument("enqstat.xml", url);
 		String metadataLinkLocation = getAtomLinkLocation(page, "self",

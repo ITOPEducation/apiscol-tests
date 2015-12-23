@@ -27,7 +27,7 @@ public class ThumbsChoiceAndDeletionTest extends ApiScolTests {
 
 	@Test
 	public void testPostingDocumentWithMetadataChoosingThumbAndDeletingMeta() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage metadataPage = postMetadataDocument("appel-hanovre-87451.xml",
 				url);

@@ -86,7 +86,7 @@ public class ImportEdubasesTest extends ApiScolTests {
 		new File(testDataDirectory + "edubases").mkdirs();
 		System.out.println("création du répertoire " + testDataDirectory
 				+ "edubases");
-		url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 		HtmlPage page = null;
 		String url = EDUBASE + matiere + "liste_fiches.php";

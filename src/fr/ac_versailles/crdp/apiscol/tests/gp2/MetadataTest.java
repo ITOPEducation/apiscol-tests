@@ -27,14 +27,14 @@ public class MetadataTest extends ApiScolTests {
 
 	@Test
 	public void testPostingDocuments() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 		postDocumentWithSeveralFormats(url);
 	}
 
 	@Test
 	public void testMaintenance() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 
 		XmlPage result1 = postMaintenanceRequest("meta", "optimization");

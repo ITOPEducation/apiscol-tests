@@ -27,7 +27,7 @@ public class ContentAndMetaPdfTest extends ApiScolTests {
 
 	@Test
 	public void testPostingPdfDocumentWithMetadata() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage page = postMetadataDocument("appel-hanovre-87451.xml", url);
 		String metadataLinkLocation = getAtomLinkLocation(page, "self",

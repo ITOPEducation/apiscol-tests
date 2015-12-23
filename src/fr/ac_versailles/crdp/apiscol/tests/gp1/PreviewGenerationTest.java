@@ -43,7 +43,7 @@ public class PreviewGenerationTest extends ApiScolTests {
 
 	private void postContentAndMetadataAndCheckPreview(String metadataFileName,
 			String resourceFileName) {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage metadataPage = postMetadataDocument(metadataFileName, url);
 		String metadataLinkLocation = getAtomLinkLocation(metadataPage, "self",
