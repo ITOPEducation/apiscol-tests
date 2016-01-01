@@ -27,7 +27,7 @@ public class ContentAndMetaUbzTest extends ApiScolTests {
 
 	@Test
 	public void testPostingUbzDocumentWithMetadata() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseWanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage page = postMetadataDocument("cuisson1.xml", url);
 		String metadataLinkLocation = getAtomLinkLocation(page, "self",

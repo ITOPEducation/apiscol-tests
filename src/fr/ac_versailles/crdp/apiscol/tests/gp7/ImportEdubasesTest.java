@@ -86,7 +86,7 @@ public class ImportEdubasesTest extends ApiScolTests {
 		new File(testDataDirectory + "edubases").mkdirs();
 		System.out.println("création du répertoire " + testDataDirectory
 				+ "edubases");
-		url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
+		url = getServiceUrl("/edit/meta", editionServiceBaseWanUrl);
 		assertTrue("The Url must be valid", url != null);
 		HtmlPage page = null;
 		String url = EDUBASE + matiere + "liste_fiches.php";
@@ -111,7 +111,8 @@ public class ImportEdubasesTest extends ApiScolTests {
 		while (it.hasNext()) {
 			i++;
 			System.out.println(i + ".");
-
+			if (i > 30)
+				return;
 			HtmlElement h3Elem = it.next();
 
 			DomNodeList<HtmlElement> a = h3Elem.getElementsByTagName("a");
@@ -260,7 +261,6 @@ public class ImportEdubasesTest extends ApiScolTests {
 						.get(0);
 				DomElement string = source.getElementsByTagName("string")
 						.get(0);
-				System.out.println("on cherche " + string.getTextContent());
 				if (string
 						.getTextContent()
 						.trim()

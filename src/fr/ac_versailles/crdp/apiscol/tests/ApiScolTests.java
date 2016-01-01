@@ -13,7 +13,6 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -30,7 +29,6 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpHeaders;
-import org.junit.Ignore;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -40,8 +38,6 @@ import org.xml.sax.SAXException;
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.FormEncodingType;
 import com.gargoylesoftware.htmlunit.HttpMethod;
-import com.gargoylesoftware.htmlunit.Page;
-import com.gargoylesoftware.htmlunit.TextPage;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebRequest;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -56,33 +52,28 @@ public class ApiScolTests {
 	protected WebClient webClient;
 	protected String testDataDirectory;
 	protected boolean overallDeletionAuthorized;
-	protected static String editionServiceBaseLanUrl;
 	protected static String editionServiceBaseWanUrl;
 	protected static String metaServiceBaseUrl;
 	protected static String contentServiceBaseUrl;
 	protected static String thumbsServiceBaseUrl;
-	private static String noncePatternStr = "nextnonce=\"([^\"]+)\"";
-	private static Pattern noncePattern = Pattern.compile(noncePatternStr);
 
 	public void createClient() {
 		webClient = new WebClient();
 		webClient.getOptions().setJavaScriptEnabled(false);
 		webClient.getOptions().setCssEnabled(false);
 		webClient.getOptions().setUseInsecureSSL(true);
-		editionServiceBaseLanUrl = System.getProperty("edit.ws.url");
-		if (StringUtils.isEmpty(editionServiceBaseLanUrl))
-			editionServiceBaseLanUrl = "http://localhost:8080";
+		editionServiceBaseWanUrl = System.getProperty("edit.ws.url");
 		if (StringUtils.isEmpty(editionServiceBaseWanUrl))
-			editionServiceBaseWanUrl = "http://apiscol-external:8080";
+			editionServiceBaseWanUrl = "http://apiscol:8080";
 		metaServiceBaseUrl = System.getProperty("meta.ws.url");
 		if (StringUtils.isEmpty(metaServiceBaseUrl))
-			metaServiceBaseUrl = "http://localhost:8080";
+			metaServiceBaseUrl = "http://apiscol:8080";
 		contentServiceBaseUrl = System.getProperty("content.ws.url");
 		if (StringUtils.isEmpty(contentServiceBaseUrl))
-			contentServiceBaseUrl = "http://localhost:8080";
+			contentServiceBaseUrl = "http://apiscol:8080";
 		thumbsServiceBaseUrl = System.getProperty("thumbs.ws.url");
 		if (StringUtils.isEmpty(thumbsServiceBaseUrl))
-			thumbsServiceBaseUrl = "http://localhost:8080";
+			thumbsServiceBaseUrl = "http://apiscol:8080";
 		testDataDirectory = System.getProperty("tests.data.dir");
 		if (StringUtils.isEmpty(testDataDirectory))
 			testDataDirectory = "data/";
@@ -115,7 +106,7 @@ public class ApiScolTests {
 
 	protected XmlPage postMaintenanceRequest(String service, String command) {
 		URL url = getServiceUrl("/edit/maintenance/" + service + "/" + command,
-				editionServiceBaseLanUrl);
+				editionServiceBaseWanUrl);
 		WebRequest request = new WebRequest(url, HttpMethod.POST);
 		request.setAdditionalHeader("Accept", "application/atom+xml");
 		request.setEncodingType(FormEncodingType.URL_ENCODED);
@@ -569,7 +560,7 @@ public class ApiScolTests {
 	}
 
 	protected XmlPage getNewResourcePage(String metadata, String type) {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseWanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage page = createNewRessource(metadata, type);
 		return page;
@@ -577,7 +568,7 @@ public class ApiScolTests {
 
 	private XmlPage createNewRessource(String metadata, String type) {
 		WebRequest request = new WebRequest(getServiceUrl("/edit/resource",
-				editionServiceBaseLanUrl), HttpMethod.POST);
+				editionServiceBaseWanUrl), HttpMethod.POST);
 		request.setAdditionalHeader("Accept", "application/atom+xml");
 		request.setEncodingType(FormEncodingType.URL_ENCODED);
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -1198,7 +1189,7 @@ public class ApiScolTests {
 
 	protected XmlPage deleteMetadataEntry(String uri, String updated) {
 		WebRequest request = new WebRequest(getServiceUrl("/edit/meta",
-				editionServiceBaseLanUrl), HttpMethod.DELETE);
+				editionServiceBaseWanUrl), HttpMethod.DELETE);
 		List<NameValuePair> list = new ArrayList<NameValuePair>();
 		list.add(new NameValuePair("mdid", uri));
 		request.setRequestParameters(list);
@@ -1223,7 +1214,7 @@ public class ApiScolTests {
 	}
 
 	public XmlPage postingImsLdFile1(File tempDir, boolean automatedThumbs) {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseWanUrl);
 		assertTrue("The Url must be valid", url != null);
 
 		Document manifest = loadManifest(tempDir);
@@ -1232,7 +1223,7 @@ public class ApiScolTests {
 		extractPlayMetadata(manifest, tempDir, url);
 		File syntheticManifest = dumpXMLToFile(tempDir, manifest);
 		System.out.println("manifest synthetic=" + syntheticManifest);
-		URL url2 = getServiceUrl("/edit/manifest", editionServiceBaseLanUrl);
+		URL url2 = getServiceUrl("/edit/manifest", editionServiceBaseWanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage packResponse = postImsLdDocument(syntheticManifest, url2);
 		// System.out.println(packResponse.asXml());

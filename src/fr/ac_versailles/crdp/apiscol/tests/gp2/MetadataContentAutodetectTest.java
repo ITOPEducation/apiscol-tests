@@ -27,7 +27,7 @@ public class MetadataContentAutodetectTest extends ApiScolTests {
 
 	@Test
 	public void testPostingLinkWithMetadata() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseWanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage page = postMetadataDocument("notice_mardi.xml", url, false,
 				true);

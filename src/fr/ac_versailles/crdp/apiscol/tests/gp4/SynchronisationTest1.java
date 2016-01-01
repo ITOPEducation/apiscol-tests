@@ -26,7 +26,7 @@ public class SynchronisationTest1 extends ApiScolTests {
 
 	@Test
 	public void testPostingRdfDocumentWithMetadataAndChangingMeta() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseWanUrl);
 		assertTrue("The Url must be valid", url != null);
 
 		XmlPage newResourcePage = getNewResourcePage("bad-metadata");

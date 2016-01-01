@@ -27,7 +27,7 @@ public class SynchronisationTest2 extends ApiScolTests {
 
 	@Test
 	public void testPostingRtfDocumentWithMetadata() {
-		URL url = getServiceUrl("/edit/meta", editionServiceBaseLanUrl);
+		URL url = getServiceUrl("/edit/meta", editionServiceBaseWanUrl);
 		assertTrue("The Url must be valid", url != null);
 		XmlPage page = postMetadataDocument("eau_dans_tous_ses_etats.xml", url);
 		String metadataLinkLocation = getAtomLinkLocation(page, "self",
