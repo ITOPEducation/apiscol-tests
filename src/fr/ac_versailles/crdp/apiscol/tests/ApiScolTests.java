@@ -49,6 +49,7 @@ import com.gargoylesoftware.htmlunit.xml.XmlPage;
 public class ApiScolTests {
 	protected static final String LOGIN = "crdp";
 	protected static final String PASSWORD = "foucault";
+	protected static final String APISCOL_PUBLIC_URL = "http://apiscol-external:8080";
 	protected WebClient webClient;
 	protected String testDataDirectory;
 	protected boolean overallDeletionAuthorized;
@@ -64,16 +65,16 @@ public class ApiScolTests {
 		webClient.getOptions().setUseInsecureSSL(true);
 		editionServiceBaseWanUrl = System.getProperty("edit.ws.url");
 		if (StringUtils.isEmpty(editionServiceBaseWanUrl))
-			editionServiceBaseWanUrl = "http://apiscol:8080";
+			editionServiceBaseWanUrl = APISCOL_PUBLIC_URL;
 		metaServiceBaseUrl = System.getProperty("meta.ws.url");
 		if (StringUtils.isEmpty(metaServiceBaseUrl))
-			metaServiceBaseUrl = "http://apiscol:8080";
+			metaServiceBaseUrl = APISCOL_PUBLIC_URL;
 		contentServiceBaseUrl = System.getProperty("content.ws.url");
 		if (StringUtils.isEmpty(contentServiceBaseUrl))
-			contentServiceBaseUrl = "http://apiscol:8080";
+			contentServiceBaseUrl = APISCOL_PUBLIC_URL;
 		thumbsServiceBaseUrl = System.getProperty("thumbs.ws.url");
 		if (StringUtils.isEmpty(thumbsServiceBaseUrl))
-			thumbsServiceBaseUrl = "http://apiscol:8080";
+			thumbsServiceBaseUrl = APISCOL_PUBLIC_URL;
 		testDataDirectory = System.getProperty("tests.data.dir");
 		if (StringUtils.isEmpty(testDataDirectory))
 			testDataDirectory = "data/";
@@ -417,6 +418,12 @@ public class ApiScolTests {
 
 	protected XmlPage postMetadataDocument(String path, URL url,
 			boolean ignoreFailure, boolean autodetectContent) {
+		return postMetadataDocument(path, url, ignoreFailure, autodetectContent, false);
+	}
+
+	protected XmlPage postMetadataDocument(String path, URL url,
+			boolean ignoreFailure, boolean autodetectContent,
+			boolean deduplicate) {
 		WebRequest request = new WebRequest(url, HttpMethod.POST);
 		request.setAdditionalHeader("Accept", "application/atom+xml");
 		request.setEncodingType(FormEncodingType.MULTIPART);
@@ -428,6 +435,9 @@ public class ApiScolTests {
 		if (autodetectContent) {
 			params.add(new NameValuePair("url_autodetect", "true"));
 			params.add(new NameValuePair("thumb_autochoice", "true"));
+		}
+		if (deduplicate) {
+			params.add(new NameValuePair("deduplicate", "true"));
 		}
 		request.setRequestParameters(params);
 
