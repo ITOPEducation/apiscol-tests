@@ -418,7 +418,8 @@ public class ApiScolTests {
 
 	protected XmlPage postMetadataDocument(String path, URL url,
 			boolean ignoreFailure, boolean autodetectContent) {
-		return postMetadataDocument(path, url, ignoreFailure, autodetectContent, false);
+		return postMetadataDocument(path, url, ignoreFailure,
+				autodetectContent, false);
 	}
 
 	protected XmlPage postMetadataDocument(String path, URL url,
@@ -1537,6 +1538,36 @@ public class ApiScolTests {
 			e.printStackTrace();
 		}
 
+	}
+
+	protected XmlPage postCustomPreview(String path, URL url,
+			String resourceId, String updated) {
+		WebRequest request = new WebRequest(url, HttpMethod.POST);
+		request.setAdditionalHeader("Accept", "application/atom+xml");
+		request.setEncodingType(FormEncodingType.MULTIPART);
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		File imageFile = new File(testDataDirectory + path);
+		assertTrue("Test file does not exist " + imageFile.getAbsolutePath(),
+				imageFile.exists());
+		params.add(new KeyDataPair("image", imageFile, "application/xml",
+				"utf-8"));
+
+		params.add(new NameValuePair("resid", resourceId));
+
+		request.setRequestParameters(params);
+		request.setAdditionalHeader("If-Match", updated);
+		XmlPage page = null;
+		try {
+			page = webClient.getPage(request);
+		} catch (FailingHttpStatusCodeException e) {
+			assertTrue(
+					"The response code should be ok and not"
+							+ e.getStatusCode() + " with message "
+							+ e.getMessage(), false);
+		} catch (IOException e) {
+			assertTrue("No connection to the service", false);
+		}
+		return page;
 	}
 
 }

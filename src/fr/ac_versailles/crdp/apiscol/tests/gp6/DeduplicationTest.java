@@ -29,10 +29,10 @@ public class DeduplicationTest extends ApiScolTests {
 	public void testPostingDocuments() {
 		URL url = getServiceUrl("/edit/meta", editionServiceBaseWanUrl);
 		assertTrue("The Url must be valid", url != null);
-		postDocumentWithSeveralFormats(url);
+		postDocumentTwiceWithModification(url);
 	}
 
-	private void postDocumentWithSeveralFormats(URL url) {
+	private void postDocumentTwiceWithModification(URL url) {
 		// create a first metadata entry
 		XmlPage page = postMetadataDocument("renkan.xml", url, false, true);
 		String titleString = "Madame Bovary de Flaubert: carte mentale";
@@ -61,7 +61,7 @@ public class DeduplicationTest extends ApiScolTests {
 		testAtomDocumentSummaryContains(summaryExtract, modifiedPage);
 		String metadataLinkLocation = getAtomLinkLocation(page, "self",
 				"text/html");
-		deleteMetadataEntry(metadataLinkLocation,
-				getAtomUpdatedField(modifiedPage));
+//		deleteMetadataEntry(metadataLinkLocation,
+//				getAtomUpdatedField(modifiedPage));
 	}
 }
