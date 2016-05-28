@@ -62,7 +62,7 @@ public class SynchronisationTest1 extends ApiScolTests {
 		String lomLocation = getAtomLinkLocation(page3, "describedby",
 				"application/lom+xml");
 		XmlPage lomDocument = getPage(lomLocation);
-		testTechnicalFormatIs("application/rtf", lomDocument);
+		testTechnicalFormatIs("http://purl.org/NET/mediatypes/application/rtf", lomDocument);
 		testTechnicalLocationIs(mainFileUrl, lomDocument);
 		testTechnicalSizeIs("834", lomDocument);
 
@@ -70,3 +70,4 @@ public class SynchronisationTest1 extends ApiScolTests {
 	}
 
 }
+

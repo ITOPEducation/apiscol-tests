@@ -7,8 +7,6 @@ import java.net.URL;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
 
 import com.gargoylesoftware.htmlunit.xml.XmlPage;
 
@@ -36,8 +34,9 @@ public class ContentAndMetaLinkDoubleThumbTest extends ApiScolTests {
 				"url");
 		String urn = getAtomId(newResourcePage);
 		String editUri = getEditMediaUri(newResourcePage);
-		String etag=getAtomUpdatedField(newResourcePage);
-		newResourcePage=postUrlContent(editUri, urn, "http://www.poisson-or.com/", etag);
+		String etag = getAtomUpdatedField(newResourcePage);
+		newResourcePage = postUrlContent(editUri, urn,
+				"http://www.poisson-or.com/", etag);
 		waitDuring(3000);
 		// test preview
 		XmlPage page4 = getThumbsSuggestionForMetaId(metadataLinkLocation);
@@ -54,36 +53,15 @@ public class ContentAndMetaLinkDoubleThumbTest extends ApiScolTests {
 		String scolomfrLinkLocation = getAtomLinkLocation(metaPage,
 				"describedby", "application/lom+xml");
 		XmlPage scolomfr = getXMLPage(scolomfrLinkLocation);
-		int nbRelations = getNbRelations("a pour vignette", scolomfr);
+		int nbRelations = getNbRelations(
+				"http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-009-num-021",
+				scolomfr);
 
 		deleteResource(newResourcePage);
 		XmlPage newMetadataPage = getMetadata(metadataLinkLocation, false);
 		deleteMetadataEntry(metadataLinkLocation,
 				getAtomUpdatedField(newMetadataPage));
-		assertTrue(
-				"There should be only one 'a pour vignette' relation and not "
-						+ nbRelations, nbRelations == 1);
-	}
-
-	private int getNbRelations(String string, XmlPage scolomfr) {
-		NodeList relations = scolomfr.getDocumentElement()
-				.getElementsByTagName("relation");
-		System.out.println(relations.getLength());
-		int count = 0;
-		for (int i = 0; i < relations.getLength(); i++) {
-			Element relation = (Element) relations.item(i);
-			if (!relation.hasChildNodes()) {
-				System.out
-						.println("! a void relation node in this scolomfr document");
-				continue;
-			}
-			Element kind = (Element) relation.getElementsByTagName("kind")
-					.item(0);
-			Element kindValue = (Element) kind.getElementsByTagName("value")
-					.item(0);
-			if (kindValue.getTextContent().equals("a pour vignette"))
-				count++;
-		}
-		return count;
+		assertTrue("There should be one 'a pour vignette' relation and not "
+				+ nbRelations, nbRelations == 1);
 	}
 }

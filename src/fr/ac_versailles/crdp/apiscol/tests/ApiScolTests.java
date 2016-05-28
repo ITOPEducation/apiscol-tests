@@ -1570,4 +1570,25 @@ public class ApiScolTests {
 		return page;
 	}
 
+	protected int getNbRelations(String relationKindUri, XmlPage scolomfr) {
+		NodeList relations = scolomfr.getDocumentElement()
+				.getElementsByTagName("relation");
+		int count = 0;
+		for (int i = 0; i < relations.getLength(); i++) {
+			Element relation = (Element) relations.item(i);
+			if (!relation.hasChildNodes()) {
+				System.out
+						.println("! a void relation node in this scolomfr document");
+				continue;
+			}
+			Element kind = (Element) relation.getElementsByTagName("kind")
+					.item(0);
+			Element kindValue = (Element) kind.getElementsByTagName("value")
+					.item(0);
+			if (kindValue.getTextContent().equals(relationKindUri))
+				count++;
+		}
+		return count;
+	}
+
 }
