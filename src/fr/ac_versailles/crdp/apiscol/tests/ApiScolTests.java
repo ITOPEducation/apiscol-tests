@@ -58,6 +58,20 @@ public class ApiScolTests {
 	protected static String contentServiceBaseUrl;
 	protected static String thumbsServiceBaseUrl;
 
+	protected enum Languages {
+		fr("http://id.loc.gov/vocabulary/iso639-1/fr");
+		private String value;
+
+		private Languages(String value) {
+			this.value = value;
+		}
+
+		@Override
+		public String toString() {
+			return value;
+		}
+	}
+
 	public void createClient() {
 		webClient = new WebClient();
 		webClient.getOptions().setJavaScriptEnabled(false);
@@ -218,6 +232,27 @@ public class ApiScolTests {
 				title.equals(titleString));
 	}
 
+	protected void testAtomDocumentTitleIs(String titleString,
+			Languages language, XmlPage page) {
+		Element root = getAtomDocumentRootItem(page);
+		NodeList titles = root.getElementsByTagName("title");
+		for (int i = 0; i < titles.getLength(); i++) {
+			Element titleElement = (Element) titles.item(i);
+			String languageStr = titleElement.getAttribute("language");
+			if (languageStr.equals(language.toString())) {
+				String title = titleElement.getTextContent();
+				assertTrue("The title should be " + titleString + " and not "
+						+ title, title.equals(titleString));
+				return;
+			}
+
+		}
+		assertTrue(
+				"No title element has language attribute "
+						+ language.toString(), false);
+
+	}
+
 	protected void testAtomDocumentHasAuthorTag(XmlPage page) {
 		Element root = getAtomDocumentRootItem(page);
 		NodeList autors = root.getElementsByTagName("author");
@@ -233,6 +268,35 @@ public class ApiScolTests {
 				return;
 		}
 		assertTrue("One one the authors should be " + author, false);
+	}
+
+	protected void testEducationalResourceTypeIs(String uri, XmlPage page) {
+		Element root = getAtomDocumentRootItem(page);
+		NodeList educationalResourceTypeElement = root
+				.getElementsByTagName("educational_resource_type");
+		for (int i = 0; i < educationalResourceTypeElement.getLength(); i++) {
+			if (((Element) educationalResourceTypeElement.item(0))
+					.getTextContent().equals(uri))
+				return;
+		}
+		assertTrue("One one the educational resource types should be " + uri,
+				false);
+	}
+
+	protected void testEducationalResourceTypeLabelIs(String label, XmlPage page) {
+		Element root = getAtomDocumentRootItem(page);
+		NodeList educationalResourceTypeElements = root
+				.getElementsByTagName("educational_resource_type");
+		for (int i = 0; i < educationalResourceTypeElements.getLength(); i++) {
+			Element educationalResourceTypeElement = (Element) educationalResourceTypeElements
+					.item(i);
+			if ((educationalResourceTypeElement.hasAttribute("title"))
+					&& educationalResourceTypeElement.getAttribute("title")
+							.equals(label))
+				return;
+		}
+		assertTrue("One one the educational resource types titles should be " + label,
+				false);
 	}
 
 	protected void testAtomDocumentContributorsContainsOrganization(
@@ -468,6 +532,17 @@ public class ApiScolTests {
 				+ src, src.endsWith(fileName));
 	}
 
+	protected void testResourceContentSrcIs(String fileName, XmlPage page) {
+		Element root = getAtomDocumentRootItem(page);
+		NodeList contents = root.getElementsByTagName("content");
+		assertTrue("There should be 1 content and not " + contents.getLength(),
+				contents.getLength() == 1);
+		Element content = (Element) contents.item(0);
+		String src = content.getAttribute("src");
+		assertTrue("Content src should end with " + fileName + " and it is "
+				+ src, src.equals(fileName));
+	}
+
 	/**
 	 * Read lom metadata files
 	 */
@@ -518,8 +593,8 @@ public class ApiScolTests {
 
 	protected Element getLomDocumentRootItem(XmlPage page) {
 		Element root = (Element) page.getChildNodes().item(0);
-		assertTrue("There was no lom node in the metadata document ", root
-				.getLocalName().equals("lom"));
+		assertTrue("There was no lom node in the metadata document, name is "
+				+ root.getLocalName(), root.getLocalName().equals("lom"));
 		return root;
 	}
 

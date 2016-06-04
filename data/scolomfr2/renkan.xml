@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lom xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR">
+<general>
+<identifier>
+<catalog>URI</catalog>
+<entry/></identifier>
+<title>
+<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Madame Bovary de Flaubert: carte mentale</string></title>
+<language>http://id.loc.gov/vocabulary/iso639-2/fre</language>
+<description>
+<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Le processus de création de l'oeuvre Madame Bovary ainsi que son analyse littéraire sous forme de carte mentale.</string></description>
+<keyword>
+<string language="http://id.loc.gov/vocabulary/iso639-2/fre">flaubert, madame bovary</string></keyword>
+<lomfr:documentType><lomfr:source>SCOLOMFRv2.1</lomfr:source><lomfr:value>http://purl.org/dc/dcmitype/Dataset</lomfr:value><lomfr:label>ensemble de données</lomfr:label></lomfr:documentType></general>
+<lifeCycle>
+<version>
+<string language="http://id.loc.gov/vocabulary/iso639-2/fre">V1.0</string></version>
+<status><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/final</value><label>final</label></status></lifeCycle>
+<metaMetadata>
+<contribute>
+<date>
+<dateTime>2015-09-24T15:11:07</dateTime></date></contribute></metaMetadata>
+<technical>
+    <location>http://renkan.iri-research.org/renkan/p/pub/39d9b8a6-61db-11e5-96cb-2715c8d03c82?cowebkey=5790bc41e9f9c921bf0220d0fdaab6bfcb7b8d501c1339ab98b84cb1caf96e6c#?view=1223.676,467.592,0.976%26viewIndex=-1</location>
+    <size>0</size>
+    <format>http://purl.org/NET/mediatypes/text/html</format>
+ </technical>
+<educational>
+<learningResourceType><!--Attention ! 5.2 Type pédagogique de la ressource : la valeur "énoncé d'exercice" correspond à 2 concepts dans le vocabulaire scolomfr-voc-010.--><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/problem_statement</value><label>énoncé de problème</label><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/exercise</value><label>exercice</label></learningResourceType>
+<intendedEndUserRole><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/learner</value><label>apprenant</label></intendedEndUserRole>
+<context><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-012-num-003</value><label>enseignement secondaire</label></context></educational>
+<rights>
+<cost><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/no</value><label>non</label></cost></rights>
+<classification><purpose><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/competency</value><label>compétence</label></purpose><taxonPath>
+<source>
+<string language="http://id.loc.gov/vocabulary/iso639-2/fre">LOMv1.0</string></source>
+<taxon>
+<id>nomenclature compétence scolomfr</id>
+<entry>
+<string language="http://id.loc.gov/vocabulary/iso639-2/fre">avoir des repères littéraires</string></entry></taxon></taxonPath></classification></lom>
