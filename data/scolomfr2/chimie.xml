@@ -7,7 +7,7 @@
 			</entry>
 		</identifier>
 		<title>
-			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Webdocumentaire : Les métaux usuels, l'atome
+			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Webdocumentaire 2 : Les métaux usuels, l'atome
 				et la conductivité</string>
 		</title>
 		<language>http://id.loc.gov/vocabulary/iso639-2/fre</language>
@@ -80,5 +80,10 @@
 			<value>http://data.education.fr/voc/scolomfr/concept/no</value>
 			<label>non</label>
 		</cost>
+		<copyrightAndOtherRestrictions>
+			<source>SCOLOMFRv2.0</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/no_2</value>
+			<label>non</label>
+		</copyrightAndOtherRestrictions>
 	</rights>
 </lom>

@@ -1,132 +1,279 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<lom xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scolomfr="http://www.lom-fr.fr/xsd/SCOLOMFR">
-  <general>
-    <identifier>
-      <catalog/>
-      <entry>https://notices.neteduc-cloud.fr/content/resource/4b95d3ee-5918-4ba2-8082-15692377132b?format=xml</entry>
-    </identifier>
-    <title>
-      <string language="http://id.loc.gov/vocabulary/iso639-2/fre">Conservation de la masse : Dissolution dans un récipient hermétique</string>
-    </title>
-    <language>http://id.loc.gov/vocabulary/iso639-2/fre</language>
-    <description>
-      <string language="http://id.loc.gov/vocabulary/iso639-2/fre">Un morceau de craie (carbonate de calcium) est introduit dans un récipient hermétique immédiatement rebouché, contenant de l’acide chlorhydrique concentré. Une réaction effervescente se produit et la craie est dissoute. Le récipient est pesé en permanence au cours de la manipulation, permettant de mettre en évidence la manière dont la masse évolue au cours de l’expérience.</string>
-    </description>
-    <keyword>
-      <string language="http://id.loc.gov/vocabulary/iso639-2/fre">masse</string>
-    </keyword>
-    <keyword>
-      <string language="http://id.loc.gov/vocabulary/iso639-2/fre">dissolution</string>
-    </keyword>
-    <keyword>
-      <string language="http://id.loc.gov/vocabulary/iso639-2/fre">gaz</string>
-    </keyword>
-    <coverage>
-      <string/>
-    </coverage>
-  </general>
-  <lifeCycle>
-    <contribute>
-      <role><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/publisher</value><label>éditeur</label></role>
-      <entity><![CDATA[BEGIN:VCARD VERSION:3.0 N:ITOP FN:ITOP END:VCARD]]></entity>
-      <date>
-        <dateTime>2015-12-21</dateTime>
-      </date>
-    </contribute>
-  </lifeCycle>
-  <technical>
-    <location>https://player.vimeo.com/video/149737247</location>
-    <format>http://purl.org/NET/mediatypes/text/html</format>
-    <size>0</size>
-	<scolomfr:extendedLocation>
-		<scolomfr:location>https://player.monsite.fr/video/1234</scolomfr:location>
-		<scolomfr:platform>Ma base documentaire</scolomfr:platform>
-             	<scolomfr:personalDataProcessType><scolomfr:source>SCOLOMFRv2.1</scolomfr:source><scolomfr:value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-044-num-001</scolomfr:value><scolomfr:label>personnalisation nulle : la seule donnée envoyée attachée à l'utilisateur est le code établissement</scolomfr:label></scolomfr:personalDataProcessType>
-	</scolomfr:extendedLocation>
-  </technical>
-  <educational>
-    <learningResourceType><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/experiment</value><label>expérience</label></learningResourceType>
-    <intendedEndUserRole><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/learner</value><label>apprenant</label></intendedEndUserRole>
-  </educational>
-  <rights>
-    <copyrightAndOtherRestrictions><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/yes_2</value><label>oui</label></copyrightAndOtherRestrictions>
-  </rights>
-  <classification><purpose><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/competency</value><label>compétence</label></purpose><taxonPath><source>
-        <string language="http://id.loc.gov/vocabulary/iso639-2/fre">scolomfr-voc-016</string>
-      </source><lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR"><lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-016-num-003</lom:id><lom:entry><lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">compétence 3 - les principaux éléments de mathématiques et la culture scientifique et technologique</lom:string></lom:entry></lom:taxon><lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR"><lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-016-num-0033</lom:id><lom:entry><lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">savoir utiliser des connaissances dans divers domaines scientifiques</lom:string></lom:entry></lom:taxon></taxonPath></classification>
-  <classification><purpose><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-028-num-004</value><label>enseignement</label></purpose><taxonPath>
-      <source>
-        <string language="http://id.loc.gov/vocabulary/iso639-2/fre">scolomfr-voc-015</string>
-      </source>
-      <taxon>
-        <id>scolomfr-voc-015-num-008</id>
-        <entry>
-          <string language="http://id.loc.gov/vocabulary/iso639-2/fre">domaines d'enseignement du second degré</string>
-        </entry>
-      </taxon>
-      <taxon>
-        <id>scolomfr-voc-015-num-012</id>
-        <entry>
-          <string language="http://id.loc.gov/vocabulary/iso639-2/fre">chimie</string>
-        </entry>
-      </taxon>
-    </taxonPath></classification>
-  <classification><purpose><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/educational_level</value><label>niveau éducatif détaillé</label></purpose><taxonPath><source>
-        <string language="http://id.loc.gov/vocabulary/iso639-2/fre">scolomfr-voc-022</string>
-      </source><lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR"><lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-016</lom:id><lom:entry><lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">collège</lom:string></lom:entry></lom:taxon><lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR"><lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-020</lom:id><lom:entry><lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">5e</lom:string></lom:entry></lom:taxon></taxonPath><taxonPath><source>
-        <string language="http://id.loc.gov/vocabulary/iso639-2/fre">scolomfr-voc-022</string>
-      </source><lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR"><lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-016</lom:id><lom:entry><lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">collège</lom:string></lom:entry></lom:taxon><lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR"><lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-021</lom:id><lom:entry><lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">4e</lom:string></lom:entry></lom:taxon></taxonPath></classification>
-  <classification><purpose><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-028-num-004</value><label>enseignement</label></purpose><taxonPath>
-      <source>
-        <string language="http://id.loc.gov/vocabulary/iso639-2/fre">itop_programmes</string>
-      </source>
-      <taxon>
-        <id>itop_2</id>
-        <entry>
-          <string language="http://id.loc.gov/vocabulary/iso639-2/fre">Cycle 4</string>
-        </entry>
-      </taxon>
-      <taxon>
-        <id>itop_2.4</id>
-        <entry>
-          <string language="http://id.loc.gov/vocabulary/iso639-2/fre">Physique-Chimie</string>
-        </entry>
-      </taxon>
-      <taxon>
-        <id>itop_2.4.1</id>
-        <entry>
-          <string language="http://id.loc.gov/vocabulary/iso639-2/fre">Organisation et transformation de la matière</string>
-        </entry>
-      </taxon>
-      <taxon>
-        <id>itop_2.4.1.2</id>
-        <entry>
-          <string language="http://id.loc.gov/vocabulary/iso639-2/fre">Décrire et expliquer des transformations chimiques</string>
-        </entry>
-      </taxon>
-    </taxonPath></classification>
-  <metaMetadata>
-    <identifier>
-      <catalog>Apiscol :apiscol_itop</catalog>
-      <entry>https://notices.neteduc-cloud.fr/meta/a6acb02d-f86c-4ee2-9924-6bce74706a83</entry>
-    </identifier>
-  </metaMetadata>
-  <relation>
-    <kind><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-009-num-023</value><label>a pour aperçu</label></kind>
-    <resource>
-      <identifier>
-        <catalog>URI</catalog>
-        <entry>https://notices.neteduc-cloud.fr/content/previews/4/b/9/5d3ee-5918-4ba2-8082-15692377132b/index.html</entry>
-      </identifier>
-    </resource>
-  </relation>
-  <relation>
-    <kind><source>SCOLOMFRv2.1</source><value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-009-num-021</value><label>a pour vignette</label></kind>
-    <resource>
-      <identifier>
-        <catalog>URI</catalog>
-        <entry>https://notices.neteduc-cloud.fr/thumbs/files/8/7/4/f7b2aa68fab4d313bedc7a4555af4.png</entry>
-      </identifier>
-    </resource>
-  </relation>
+<lom xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scolomfr="http://www.lom-fr.fr/xsd/SCOLOMFR">
+	<general>
+		<identifier>
+			<catalog />
+			<entry>https://notices.neteduc-cloud.fr/content/resource/4b95d3ee-5918-4ba2-8082-15692377132b?format=xml
+			</entry>
+		</identifier>
+		<title>
+			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Conservation de la masse : Dissolution dans
+				un récipient hermétique
+			</string>
+		</title>
+		<language>http://id.loc.gov/vocabulary/iso639-2/fre</language>
+		<description>
+			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Un morceau de craie (carbonate de calcium)
+				est introduit dans un récipient hermétique immédiatement rebouché,
+				contenant de l’acide chlorhydrique concentré. Une réaction
+				effervescente se produit et la craie est dissoute. Le récipient est
+				pesé en permanence au cours de la manipulation, permettant de mettre
+				en évidence la manière dont la masse évolue au cours de
+				l’expérience.
+			</string>
+		</description>
+		<keyword>
+			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">masse</string>
+		</keyword>
+		<keyword>
+			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">dissolution</string>
+		</keyword>
+		<keyword>
+			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">gaz</string>
+		</keyword>
+		<coverage>
+			<string />
+		</coverage>
+	</general>
+	<lifeCycle>
+		<contribute>
+			<role>
+				<source>SCOLOMFRv2.1</source>
+				<value>http://data.education.fr/voc/scolomfr/concept/publisher
+				</value>
+				<label>éditeur</label>
+			</role>
+			<entity><![CDATA[BEGIN:VCARD VERSION:3.0 N:ITOP FN:ITOP END:VCARD]]></entity>
+			<date>
+				<dateTime>2015-12-21</dateTime>
+			</date>
+		</contribute>
+	</lifeCycle>
+	<technical>
+		<location>https://player.vimeo.com/video/149737247</location>
+		<format>http://purl.org/NET/mediatypes/text/html</format>
+		<size>0</size>
+		<scolomfr:extendedLocation>
+			<scolomfr:location>https://player.monsite.fr/video/1234
+			</scolomfr:location>
+			<scolomfr:platform>Ma base documentaire</scolomfr:platform>
+			<scolomfr:personalDataProcessType>
+				<scolomfr:source>SCOLOMFRv2.1</scolomfr:source>
+				<scolomfr:value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-044-num-001
+				</scolomfr:value>
+				<scolomfr:label>personnalisation nulle : la seule donnée envoyée
+					attachée à l'utilisateur est le code établissement
+				</scolomfr:label>
+			</scolomfr:personalDataProcessType>
+		</scolomfr:extendedLocation>
+	</technical>
+	<educational>
+		<learningResourceType>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/experiment
+			</value>
+			<label>expérience</label>
+		</learningResourceType>
+		<intendedEndUserRole>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/learner</value>
+			<label>apprenant</label>
+		</intendedEndUserRole>
+	</educational>
+	<rights>
+		<copyrightAndOtherRestrictions>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/yes_2</value>
+			<label>oui</label>
+		</copyrightAndOtherRestrictions>
+	</rights>
+	<classification>
+		<purpose>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/competency
+			</value>
+			<label>compétence</label>
+		</purpose>
+		<taxonPath>
+			<source>
+				<string language="http://id.loc.gov/vocabulary/iso639-2/fre">scolomfr-voc-016</string>
+			</source>
+			<lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+				xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR">
+				<lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-016-num-003
+				</lom:id>
+				<lom:entry>
+					<lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">compétence 3 - les principaux
+						éléments de mathématiques et la culture scientifique et
+						technologique
+					</lom:string>
+				</lom:entry>
+			</lom:taxon>
+			<lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+				xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR">
+				<lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-016-num-0033
+				</lom:id>
+				<lom:entry>
+					<lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">savoir utiliser des connaissances
+						dans divers domaines scientifiques
+					</lom:string>
+				</lom:entry>
+			</lom:taxon>
+		</taxonPath>
+	</classification>
+	<classification>
+		<purpose>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-028-num-003
+			</value>
+			<label>domaine d'enseignement</label>
+		</purpose>
+		<taxonPath>
+			<source>
+				<string language="http://id.loc.gov/vocabulary/iso639-2/fre">scolomfr-voc-015</string>
+			</source>
+			<taxon>
+				<id>scolomfr-voc-015-num-008</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-2/fre">domaines d'enseignement du second degré
+					</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>scolomfr-voc-015-num-012</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-2/fre">chimie</string>
+				</entry>
+			</taxon>
+		</taxonPath>
+	</classification>
+	<classification>
+		<purpose>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/educational_level
+			</value>
+			<label>niveau éducatif détaillé</label>
+		</purpose>
+		<taxonPath>
+			<source>
+				<string language="http://id.loc.gov/vocabulary/iso639-2/fre">scolomfr-voc-022</string>
+			</source>
+			<lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+				xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR">
+				<lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-016
+				</lom:id>
+				<lom:entry>
+					<lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">collège</lom:string>
+				</lom:entry>
+			</lom:taxon>
+			<lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+				xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR">
+				<lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-020
+				</lom:id>
+				<lom:entry>
+					<lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">5e</lom:string>
+				</lom:entry>
+			</lom:taxon>
+		</taxonPath>
+		<taxonPath>
+			<source>
+				<string language="http://id.loc.gov/vocabulary/iso639-2/fre">scolomfr-voc-022</string>
+			</source>
+			<lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+				xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR">
+				<lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-016
+				</lom:id>
+				<lom:entry>
+					<lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">collège</lom:string>
+				</lom:entry>
+			</lom:taxon>
+			<lom:taxon xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+				xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR">
+				<lom:id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-021
+				</lom:id>
+				<lom:entry>
+					<lom:string language="http://id.loc.gov/vocabulary/iso639-2/fre">4e</lom:string>
+				</lom:entry>
+			</lom:taxon>
+		</taxonPath>
+	</classification>
+	<classification>
+		<purpose>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-028-num-004
+			</value>
+			<label>enseignement</label>
+		</purpose>
+		<taxonPath>
+			<source>
+				<string language="http://id.loc.gov/vocabulary/iso639-2/fre">itop_programmes</string>
+			</source>
+			<taxon>
+				<id>itop_2</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Cycle 4</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>itop_2.4</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Physique-Chimie</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>itop_2.4.1</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Organisation et transformation de la
+						matière
+					</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>itop_2.4.1.2</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Décrire et expliquer des transformations
+						chimiques
+					</string>
+				</entry>
+			</taxon>
+		</taxonPath>
+	</classification>
+	<metaMetadata>
+		<identifier>
+			<catalog>Apiscol :apiscol_itop</catalog>
+			<entry>https://notices.neteduc-cloud.fr/meta/a6acb02d-f86c-4ee2-9924-6bce74706a83
+			</entry>
+		</identifier>
+	</metaMetadata>
+	<relation>
+		<kind>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-009-num-023
+			</value>
+			<label>a pour aperçu</label>
+		</kind>
+		<resource>
+			<identifier>
+				<catalog>URI</catalog>
+				<entry>https://notices.neteduc-cloud.fr/content/previews/4/b/9/5d3ee-5918-4ba2-8082-15692377132b/index.html
+				</entry>
+			</identifier>
+		</resource>
+	</relation>
+	<relation>
+		<kind>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-009-num-021
+			</value>
+			<label>a pour vignette</label>
+		</kind>
+		<resource>
+			<identifier>
+				<catalog>URI</catalog>
+				<entry>https://notices.neteduc-cloud.fr/thumbs/files/8/7/4/f7b2aa68fab4d313bedc7a4555af4.png
+				</entry>
+			</identifier>
+		</resource>
+	</relation>
 </lom>
