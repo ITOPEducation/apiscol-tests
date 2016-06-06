@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<lom xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<lom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ltsc.ieee.org/xsd/LOM"
+	xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR" xmlns:scolomfr="http://www.lom-fr.fr/xsd/SCOLOMFR"
+	xsi:schemaLocation="http://www.lom-fr.fr/scolomfr/outils/xsd/scolomfrv20/scolomfr.xsd">
 	<general>
 		<identifier>
 			<catalog />
