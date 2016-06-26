@@ -40,6 +40,7 @@ import com.gargoylesoftware.htmlunit.FormEncodingType;
 import com.gargoylesoftware.htmlunit.HttpMethod;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebRequest;
+import com.gargoylesoftware.htmlunit.html.DomElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.util.KeyDataPair;
 import com.gargoylesoftware.htmlunit.util.NameValuePair;
@@ -295,8 +296,8 @@ public class ApiScolTests {
 							.equals(label))
 				return;
 		}
-		assertTrue("One one the educational resource types titles should be " + label,
-				false);
+		assertTrue("One one the educational resource types titles should be "
+				+ label, false);
 	}
 
 	protected void testAtomDocumentContributorsContainsOrganization(
@@ -1664,6 +1665,24 @@ public class ApiScolTests {
 				count++;
 		}
 		return count;
+	}
+
+	protected DomElement getGeneralIdentifiers(String catalogName,
+			XmlPage scolomfr) {
+		List<?> identifiers = scolomfr.getDocumentElement().getByXPath(
+				"//*[name()='general']/*[name()='identifier']");
+		for (int i = 0; i < identifiers.size(); i++) {
+			DomElement identifier = (DomElement) identifiers.get(i);
+			List<?> catalogs = identifier.getByXPath("//*[name()='catalog']");
+			for (int j = 0; j < catalogs.size(); j++) {
+				if (((DomElement) catalogs.get(j)).getTextContent().trim()
+						.equals(catalogName)) {
+					return identifier;
+				}
+			}
+
+		}
+		return null;
 	}
 
 }

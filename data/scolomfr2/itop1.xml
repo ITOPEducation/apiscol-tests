@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lom xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR"
+	xmlns:scolomfr="http://www.lom-fr.fr/xsd/SCOLOMFR" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<general>
+		<identifier>
+			<catalog>URI</catalog>
+			<entry>https://metaeduc.deventeduc.fr/content/resource/7b2a8945-7639-4e3d-abed-13ae41ba69ee?format=xml
+			</entry>
+		</identifier>
+		<title>
+			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Comprendre un énoncé mathématique - SC - NEC
+			</string>
+		</title>
+		<language>http://id.loc.gov/vocabulary/iso639-2/fre</language>
+		<description>
+			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Pour travailler la compréhension d'un
+				problème mathématiques en amont de sa résolution.
+			</string>
+		</description>
+		<aggregationLevel>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-008-num-04
+			</value>
+			<label>4 - Module</label>
+		</aggregationLevel>
+		<lomfr:documentType>
+			<lomfr:source>SCOLOMFRv2.1</lomfr:source>
+			<lomfr:value>http://purl.org/dc/dcmitype/Collection</lomfr:value>
+			<lomfr:label>collection</lomfr:label>
+		</lomfr:documentType>
+		<scolomfr:generalResourceType>
+			<scolomfr:source>SCOLOMFRv2.1</scolomfr:source>
+			<scolomfr:value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-005-num-014
+			</scolomfr:value>
+			<scolomfr:label>collection de documents</scolomfr:label>
+		</scolomfr:generalResourceType>
+		<coverage>
+			<string />
+		</coverage>
+	</general>
+	<lifeCycle>
+		<contribute>
+			<role>
+				<source>SCOLOMFRv2.1</source>
+				<value>http://data.education.fr/voc/scolomfr/concept/publisher
+				</value>
+				<label>éditeur</label>
+			</role>
+			<entity><![CDATA[BEGIN:VCARD
+VERSION:3.0
+N:ITOP
+FN:ITOP
+END:VCARD]]></entity>
+			<date>
+				<dateTime>2013-01-01T00:00:00</dateTime>
+			</date>
+		</contribute>
+		<contribute>
+			<role>
+				<source>SCOLOMFRv2.1</source>
+				<value>http://data.education.fr/voc/scolomfr/concept/author</value>
+				<label>auteur</label>
+			</role>
+			<entity><![CDATA[BEGIN:VCARD
+VERSION:3.0
+N:Deminier
+FN:Deminier
+END:VCARD]]></entity>
+			<date>
+				<dateTime>2013-01-01T00:00:00</dateTime>
+			</date>
+		</contribute>
+	</lifeCycle>
+	<metaMetadata>
+		<contribute>
+			<role>
+				<source>SCOLOMFRv2.1</source>
+				<value>http://data.education.fr/voc/scolomfr/concept/creator</value>
+				<label>créateur</label>
+			</role>
+			<entity><![CDATA[BEGIN:VCARD
+VERSION:3.0
+N:Admin NEC
+FN:Admin NEC
+END:VCARD]]></entity>
+			<date>
+				<dateTime>2016-06-23T18:35:10.189769+02:00</dateTime>
+				<description>
+					<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Génération de la notice par le référenceur
+						NetEduc Cloud.
+					</string>
+				</description>
+			</date>
+		</contribute>
+		<identifier>
+			<catalog>URI</catalog>
+			<entry>https://metaeduc.deventeduc.fr/meta/473ff6c9-2df4-4330-af7f-cc2da29cb41b
+			</entry>
+		</identifier>
+	</metaMetadata>
+	<technical>
+		<format>http://purl.org/NET/mediatypes/text/html</format>
+		<size>0</size>
+		<location>http://www.test-nec.com/comprendre</location>
+		<installationRemarks>
+			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Voici comment je m'installe</string>
+		</installationRemarks>
+	</technical>
+	<educational>
+		<intendedEndUserRole>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/learner</value>
+			<label>apprenant</label>
+		</intendedEndUserRole>
+		<description>
+			<string language="http://id.loc.gov/vocabulary/iso639-2/fre">Voici comment j'utilise cette ressource
+			</string>
+		</description>
+		<lomfr:activity>
+			<lomfr:source>SCOLOMFRv2.1</lomfr:source>
+			<lomfr:value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-019-num-037
+			</lomfr:value>
+			<lomfr:label>comprendre</lomfr:label>
+		</lomfr:activity>
+		<scolomfr:place>
+			<scolomfr:source>SCOLOMFRv2.1</scolomfr:source>
+			<scolomfr:value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-017-num-005
+			</scolomfr:value>
+			<scolomfr:label>en salle de classe</scolomfr:label>
+		</scolomfr:place>
+	</educational>
+	<rights>
+		<cost>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/yes</value>
+			<label>oui</label>
+		</cost>
+		<copyrightAndOtherRestrictions>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/yes_2</value>
+			<label>oui</label>
+		</copyrightAndOtherRestrictions>
+	</rights>
+	<classification>
+		<purpose>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-028-num-013
+			</value>
+			<label>label</label>
+		</purpose>
+		<taxonPath>
+			<source>
+				<string language="http://id.loc.gov/vocabulary/iso639-2/fre">labels ITOP</string>
+			</source>
+			<taxon>
+				<id>http://itop-education.fr/concepts/labels/neteduc-cloud</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-2/fre">NetEduc Cloud</string>
+				</entry>
+			</taxon>
+		</taxonPath>
+	</classification>
+	<classification>
+		<purpose>
+			<source>SCOLOMFRv2.0</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/educational_level
+			</value>
+			<label>niveau éducatif détaillé</label>
+		</purpose>
+		<taxonPath>
+			<source>
+				<string language="http://id.loc.gov/vocabulary/iso639-1/fr">scolomfr-voc-022</string>
+			</source>
+			<taxon>
+				<id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-626
+				</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-1/fr">Niveau éducatif détaillé (2015-)</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-615
+				</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-1/fr">cycles de l'enseignement scolaire</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-618
+				</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-1/fr">cycles de la scolarité obligatoire</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-022-num-620
+				</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-1/fr">cycle 3</string>
+				</entry>
+			</taxon>
+		</taxonPath>
+	</classification>
+	<classification>
+		<purpose>
+			<source>SCOLOMFRv2.0</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-028-num-003
+			</value>
+			<label>domaine d'enseignement</label>
+		</purpose>
+		<taxonPath>
+			<source>
+				<string language="http://id.loc.gov/vocabulary/iso639-1/fr">scolomfr-voc-015</string>
+			</source>
+			<taxon>
+				<id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-015-num-1830
+				</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-1/fr">Domaine d'enseignement (2015-)</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-015-num-1822
+				</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-1/fr">enseignements de l'école élémentaire
+					</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-015-num-934
+				</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-1/fr">mathématiques (cycle 3)</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-015-num-935
+				</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-1/fr">nombres et calculs (mathématiques cycle 3)
+					</string>
+				</entry>
+			</taxon>
+			<taxon>
+				<id>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-015-num-1828
+				</id>
+				<entry>
+					<string language="http://id.loc.gov/vocabulary/iso639-1/fr">résolution de problème (mathématiques cycle
+						3)
+					</string>
+				</entry>
+			</taxon>
+		</taxonPath>
+	</classification>
+	<relation>
+		<kind>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-009-num-023
+			</value>
+			<label>a pour aperçu</label>
+		</kind>
+		<resource>
+			<identifier>
+				<catalog>URI</catalog>
+				<entry>https://metaeduc.deventeduc.fr/content/previews/7/b/2/a8945-7639-4e3d-abed-13ae41ba69ee/index.html
+				</entry>
+			</identifier>
+		</resource>
+	</relation>
+	<relation>
+		<kind>
+			<source>SCOLOMFRv2.1</source>
+			<value>http://data.education.fr/voc/scolomfr/concept/scolomfr-voc-009-num-021
+			</value>
+			<label>a pour vignette</label>
+		</kind>
+		<resource>
+			<identifier>
+				<catalog>URI</catalog>
+				<entry>https://metaeduc.deventeduc.fr/thumbs/files/2/b/2/679b984f34efa2e68714a31e66f57.png
+				</entry>
+			</identifier>
+		</resource>
+	</relation>
+</lom>
