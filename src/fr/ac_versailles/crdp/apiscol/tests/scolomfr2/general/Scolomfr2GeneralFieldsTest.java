@@ -1,4 +1,4 @@
-package fr.ac_versailles.crdp.apiscol.tests.gp8;
+package fr.ac_versailles.crdp.apiscol.tests.scolomfr2.general;
 
 import static org.junit.Assert.assertTrue;
 
